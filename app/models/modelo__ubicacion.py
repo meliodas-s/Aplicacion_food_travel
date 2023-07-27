@@ -2,17 +2,15 @@ import json
 from models.modelo__objeto_id import ObjetoId
 
 
-class Usuario(ObjetoId):
+class Ubicacion(ObjetoId):
     def __init__(self,
-                 nombre: str,
-                 apellido: str,
-                 historial_rutas: list[int],
+                 direccion:str,
+                 coordenadas: list[float],
                  id=None) -> None:
-        super().__init__('data/usuarios.json', id)
-        self.nombre = nombre
-        self.apellido = apellido
-        self.historial_rutas = historial_rutas
-        
+        super().__init__('data/ubicacion.json', id)
+        self.direccion = direccion
+        self.coordenadas = coordenadas
+
     # Metodos de lectura
     @classmethod
     def cargar_de_json(cls, archivo):
@@ -38,11 +36,10 @@ class Usuario(ObjetoId):
     # Metodos de guardado
     def crear_json(self):
         return {
-            'nombre': self.nombre,
-            'apellido': self.apellido,
-            'historial_rutas': self.historial_rutas,
+            'direccion': self.direccion,
+            'coordenadas': self.coordenadas,
             'id': self.id
-            }
+        }
 
     @staticmethod
     def guardar_datos(archivo: str, objetos: list):

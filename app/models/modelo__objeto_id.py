@@ -13,7 +13,8 @@ class ObjetoId:
         # Asignando id al destino culinario
 
         def creacion_id():
-            """Definimos el id del destino culinario
+            """
+            Definimos el id del destino culinario
             al llamar el archivo donde se guardan los destinos, contar
             la cantidad de elementos y asignar ese numero mas uno
             como id del destino.

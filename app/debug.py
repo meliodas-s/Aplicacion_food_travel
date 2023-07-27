@@ -34,3 +34,43 @@ print('Carga de JSON: Ok')
 lista_destinos_debug.append(destino_culinario_debug_1)
 DestinoCulinario.guardar_datos(archivo,lista_destinos_debug)
 print('Guardado de nuevo JSON: Ok')
+
+print()
+################################################
+
+# Crear nueva Actividad
+from models.modelo__actividad import Actividad
+
+# Consola
+print('Importar modulo de Actividad: Ok')
+
+# Creando destino y controlando id
+actividad_debug_1 = Actividad('Hola',12,'hola')
+print('Id de la nueva Actividad:',actividad_debug_1.id)
+
+# Consola
+print('Crear actividad: Ok')
+
+# Verificamos el id de la actividad
+import json
+archivo = actividad_debug_1.ubicacion
+with open(archivo,'r') as file:
+    destinos = json.load(file)
+    if len(destinos) == 0:
+        ultimo_id_en_archivo = 0
+    else:
+        ultimo_id_en_archivo = destinos[-1]['id']
+    id_nueva_actividad = actividad_debug_1.id
+    if ultimo_id_en_archivo  == id_nueva_actividad - 1:
+        print('Verificar ID de la actividad: Ok')
+        print(f'  Ultimo Id en data: {ultimo_id_en_archivo}')
+        print(f'  ID de nueva actividad: {id_nueva_actividad}')
+
+# Verificamos el cargado de archivos
+lista_actividades_debug = Actividad.cargar_de_json(archivo)
+print('Carga de JSON: Ok')
+
+# Verificamos el guardado de datos
+lista_actividades_debug.append(actividad_debug_1)
+Actividad.guardar_datos(archivo,lista_actividades_debug)
+print('Guardado de nuevo JSON: Ok')

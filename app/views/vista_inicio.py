@@ -4,67 +4,54 @@
     - Planificar vistas.
     - Review y Calificaciones."""
 
-import tkinter as tk
-from tkinter.font import Font
+import customtkinter
 
 
-class VistaInicio(tk.Frame):
-    def __init__(self, master=None, controlador=None):
+class VistaInicio(customtkinter.CTkFrame):
+    def __init__(self, master=None, controlador=None,
+                 values=['Destinos culinarios', 'Busqueda', 'Planificar', 'Reviews'],):
         """
         Crea la vista de inicio.
         """
+
+        # Defino los colores
+        self.c_naranja_quemado = '#FF5722'
+        self.c_gris_azulado = '#607D8B'
+        self.c_verde = '#4CAF50'
+        self.c_gris_claro = '#EEEEEE'
+
         super().__init__(master)
         self.master = master
         self.controlador = controlador
+        self.values = values
+        self.botones = []
 
-        # Define una fuente grande y en negrita para el título
-        titulo_font = Font(size=24, weight="bold")
+        # Fuente grande y en negrita para el título
+        titulo_font = customtkinter.CTkFont(size=24, weight="bold")
+        self.titulo = customtkinter.CTkLabel(self,
+                                             text="Food Travel",
+                                             font=titulo_font)
+        self.titulo.grid(row=0, column=0, pady=10, padx=50)
 
-        # Crea una etiqueta para el título y la agrega a la vista
-        self.titulo = tk.Label(self, text="Food Travel", font=titulo_font)
-        self.titulo.grid(row=0, column=0, pady=5)
-
-        # Define una fuente más pequeña para la descripción de la funcionalidad
-        descripcion_font = Font(size=12)
-
-        # Se guarda el nombre de usuario para mostrarlo en la descripcion
+        # Descripcion y nombre de usuario
+        descripcion_font = customtkinter.CTkFont(size=12)
         user_name = 'Usuario'
-
-        # Crea una etiqueta para la descripción de la funcionalidad y la agrega a la vista
-        self.descripcion = tk.Label(
+        self.descripcion = customtkinter.CTkLabel(
             self,
             text=f"Bienvenido {user_name}",
             font=descripcion_font,
-            wraplength=300,
-        )
-        self.descripcion.grid(row=1, column=0, pady=50)
+            wraplength=300)
+        self.descripcion.grid(row=1, column=0, pady=10)
 
-        # Botones
+        # Creando los botones
+        for i, value in enumerate(self.values):
+            boton = customtkinter.CTkButton(
+                self, text=value, command=self.controlador,
+                fg_color=self.c_gris_azulado, hover_color= self.c_verde)
+            boton.grid(row=i + 2, column=0, pady=10)
+            self.botones.append(boton)
 
-        # Explorar Destinos Culinarios
-        # Crea el botón para ir a ... y lo agrega a la vista
-        self.boton_juegos = tk.Button(
-            self, text="Destinos Culinarios", command=self.controlador
-        )
-        self.boton_juegos.grid(row=2, column=0, pady=10)
-
-        # Busqueda y Filtro
-        # Crea el botón para ir a ... y lo agrega a la vista
-        self.boton_juegos = tk.Button(
-            self, text="Busqueda", command=self.controlador
-        )
-        self.boton_juegos.grid(row=2, column=0, pady=10)
-
-        # Planificar Visitas
-        # Crea el botón para ir a ... y lo agrega a la vista
-        self.boton_juegos = tk.Button(
-            self, text="Planificar Visitas", command=self.controlador
-        )
-        self.boton_juegos.grid(row=2, column=0, pady=10)
-
-        # Reviews y calificaciones
-        # Crea el botón para ir a ... y lo agrega a la vista
-        self.boton_juegos = tk.Button(
-            self, text="Reviews", command=self.controlador
-        )
-        self.boton_juegos.grid(row=2, column=0, pady=10)
+    # Para establecer la configuracion por que se resetea
+    def inicializar(self):
+        self.configure(bg_color=self.c_naranja_quemado,
+                       fg_color=self.c_naranja_quemado)
