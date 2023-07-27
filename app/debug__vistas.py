@@ -1,5 +1,5 @@
 import customtkinter
-from views.vista_inicio import VistaInicio
+from app.views.vista__inicio import VistaInicio
 
 class Aplicacion(customtkinter.CTk):
     def __init__(self):
