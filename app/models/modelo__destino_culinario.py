@@ -1,5 +1,6 @@
 import json
 from models.modelo__objeto_id import ObjetoId
+from customtkinter import CTkCheckBox
 
 class DestinoCulinario(ObjetoId):
     """

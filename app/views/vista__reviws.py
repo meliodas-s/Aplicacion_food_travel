@@ -1,1 +1,0 @@
-# Vista review y calificaciones

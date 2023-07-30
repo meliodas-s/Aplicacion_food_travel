@@ -26,6 +26,7 @@ class VistaInicio(customtkinter.CTkFrame):
         self.grid_rowconfigure(0, weight=1)
         self.controlador = controlador
         self.values = values
+        self.acciones = values
         self.botones = []
 
         # Frame_1: Botones, titulo, descripcion
@@ -51,10 +52,9 @@ class VistaInicio(customtkinter.CTkFrame):
         self.descripcion.grid(row=1, column=0, pady=10)
 
         # Creando los botones
-        for i, value in enumerate(self.values):
+        for i, (value, accion) in enumerate(zip(self.values, self.acciones)):
             boton = customtkinter.CTkButton(
-                self.frame_inicio, text=value, command=self.controlador,
-                fg_color=self.c_gris_azulado, hover_color=self.c_verde,height=40)
+                self.frame_inicio, text=value, fg_color=self.c_gris_azulado, hover_color=self.c_verde, height=40, command=self.controlador.ir_vista__detalles_dest)
             boton.grid(row=i + 2, column=0, pady=10)
             self.botones.append(boton)
 
@@ -63,4 +63,4 @@ class VistaInicio(customtkinter.CTkFrame):
         self.configure(bg_color=self.c_naranja_quemado,
                        fg_color=self.c_naranja_quemado)
         self.frame_inicio.configure(bg_color=self.c_naranja_quemado,
-                          fg_color=self.c_naranja_quemado)
+                                    fg_color=self.c_naranja_quemado)

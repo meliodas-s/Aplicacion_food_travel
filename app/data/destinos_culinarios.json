@@ -1,1 +1,86 @@
-[{"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 1}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 2}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 3}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 4}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 5}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 6}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 7}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 8}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 9}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 10}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 11}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 12}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 13}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 14}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 15}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 16}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 17}, {"nombre": "Hola", "tipo_cocina": "Hola", "ingredientes": ["Hola", "Hola"], "precio_minimo": 21.2, "precio_maximo": 21.2, "popularidad": 21.2, "id_ubicacion": 21, "imagen": "Hola", "id": 18}]
+[
+    {
+        "nombre": "El Buen Gusto",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 1,
+        "imagen": "image_1.png",
+        "id": 1
+    },
+    {
+        "nombre": "La Monumental",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 2,
+        "imagen": "image_2.png",
+        "id": 2
+    },
+    {
+        "nombre": "La 12",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 3,
+        "imagen": "image_3.png",
+        "id": 3
+    },
+    {
+        "nombre": "Donatello",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 4,
+        "imagen": "image_4.png",
+        "id": 4
+    },
+    {
+        "nombre": "Lo del Negro Copa",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 5,
+        "imagen": "image_5.png",
+        "id": 5
+    },
+    {
+        "nombre": "Pizza Mara",
+        "tipo_cocina": "Tipo de cocina",
+        "ingredientes": [
+            "sal",
+            "sal"
+        ],
+        "precio_minimo": 10,
+        "precio_maximo": 100,
+        "popularidad": 5,
+        "id_ubicacion": 6,
+        "imagen": "image_6.png",
+        "id": 6
+    }
+]
