@@ -3,11 +3,12 @@ import customtkinter
 import tkinter
 from tkintermapview import TkinterMapView
 from models.modelo__ubicacion import Ubicacion
+from models.modelo__destino_culinario import ItemMenu
 from models.modelo__destino_culinario import DestinoCulinario
 
 
 class VistaDetallesDestino(customtkinter.CTkFrame):
-    def __init__(self, master, controlador, seleccionar_local_callback=None):
+    def __init__(self, master, controlador):
         self.c_naranja_quemado = '#FF5722'
         self.c_gris_azulado = '#607D8B'
         self.c_verde = '#4CAF50'
@@ -40,34 +41,56 @@ class VistaDetallesDestino(customtkinter.CTkFrame):
         self.mapa.set_position(-24.77616437851034, -65.41079411004006)
         self.mapa.set_zoom(16)
 
-        # Frame para menu con locales (menu locales)
+        # (menu locales): Frame para menu con locales
         self.frame_menu_sccroll = customtkinter.CTkScrollableFrame(
             master=self.frame_menu, label_text='Actividades', corner_radius=None, bg_color=self.c_naranja_quemado, fg_color='transparent', label_fg_color=self.c_gris_azulado, scrollbar_button_color=self.c_gris_azulado, scrollbar_button_hover_color=self.c_verde)
         self.frame_menu_sccroll.grid(column=0, row=0, sticky='nswe')
         self.frame_menu_sccroll.columnconfigure(0, weight=1)
 
-        # Frame para boton accion segun local seleccionado (boton accion)
+        # (boton accion): Boton accion segun local seleccionado
         self. boton_accion = customtkinter.CTkButton(
-            self.frame_menu, text='Detalles', command=None, height=40, fg_color=self.c_gris_azulado, hover_color=self.c_verde)
-        self.boton_accion.grid(column = 0, row = 1)
+            self.frame_menu, text='Detalles', command=controlador.get, height=40, fg_color=self.c_gris_azulado, hover_color=self.c_verde)
+        self.boton_accion.grid(column=0, row=1)
 
-        # Cargando nombre de locales
         self.labels_locales = []
         self.controlador.mostrar_ubicaciones(
-            self.frame_menu_sccroll, self.labels_locales)
-
-        # Cargar imagenes
-        self.imagenes = []
-        self.controlador.cargar_imagenes(self.imagenes)
+            self.frame_menu_sccroll)  # Cargar locales
+        self.controlador.cargar_imagenes()  # Cargar imagenes
 
         # Cargar marcadores
         self.marcadores = []
         self.controlador.cargar_marcadores(
             lista_marcadores=self.marcadores, vista=self)
 
+        # Vista error
+        self.frame_error = customtkinter.CTkFrame(
+            self, fg_color=self.c_naranja_quemado)
+        self.frame_error.grid(column=0, row=0, sticky='nswe')
+        self.frame_error.columnconfigure(0, weight=1)
+        self.frame_error.rowconfigure(0, weight=75)  # Mensaje error
+        self.frame_error.rowconfigure(1, weight=25)  # Boton 'ok'
+
+        # Mensaje error
+        mensaje_err = 'Seleccion una opcion a la vez'
+        self.mensaje_error = customtkinter.CTkLabel(
+            self.frame_error, text=mensaje_err)
+        self.mensaje_error.grid(column=0, row=0, sticky='nswe')
+
+        # Boton error
+        # Crerar controlador.regresar
+        self. boton_error = customtkinter.CTkButton(
+            self.frame_error, text='Ok', command=controlador.regresar, height=40, fg_color=self.c_gris_azulado, hover_color=self.c_verde)
+        self.boton_error.grid(column=0, row=1)
+        
+        # Inicializar
+        self.cambiar_frame(self.frame_menu)
+
     def agregar_local(self, local):
         nombre = local.nombre
         self.labels_locales.append(local)
+
+    def cambiar_frame(self, frame_destino):
+        frame_destino.tkraise()
 
     def agregar_marcador_mapa(self, latitud, longitud, texto, imagen=None):
         return self.mapa.set_marker(latitud, longitud, text=texto, image=imagen, command=self.controlador.seleccionar_ubicacion)

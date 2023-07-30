@@ -1,6 +1,11 @@
 import json
+import tkinter
+from typing import Callable, Optional, Tuple, Union
+
+from customtkinter.windows.widgets.font import CTkFont
 from models.modelo__objeto_id import ObjetoId
 from customtkinter import CTkCheckBox
+
 
 class DestinoCulinario(ObjetoId):
     """
@@ -9,6 +14,7 @@ class DestinoCulinario(ObjetoId):
             1. Mmetodo __intit__ que permite la autogeneracion de id.
             2. Metodo tipo property, permite llamar al atributo id.
     """
+
     def __init__(self,
                  nombre: str,
                  tipo_cocina: str,
@@ -78,3 +84,11 @@ class DestinoCulinario(ObjetoId):
             lista_dicts = [destino_dict.crear_json()
                            for destino_dict in objetos]
             json.dump(lista_dicts, f)
+
+
+class ItemMenu:
+    def __init__(self, destino: DestinoCulinario, check_box: CTkCheckBox, imagen = None, ubicacion= None) -> None:
+        self.destino = destino
+        self.check_box = check_box
+        self.ubicacion = ubicacion
+        self.imagen = imagen

@@ -35,7 +35,7 @@ class Aplicacion(customtkinter.CTk):
 
     def inicializar(self):
         controlador_inicio = ControladorInicio(self)
-        controlador_detalles_dest = ControladorDetallesDest()
+        controlador_detalles_dest = ControladorDetallesDest(self)
         controlador_explorar = None
         controlador_planificar = None
         controlador_reviews = None

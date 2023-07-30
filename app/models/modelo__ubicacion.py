@@ -53,3 +53,9 @@ class Ubicacion(ObjetoId):
             lista_dicts = [objeto_dict.crear_json()
                            for objeto_dict in objetos]
             json.dump(lista_dicts, f)
+
+    @staticmethod
+    def busca_id(id:int, lista_ubicaciones:list):
+        for ubicacion in lista_ubicaciones:
+            if id == ubicacion.id:
+                return ubicacion
