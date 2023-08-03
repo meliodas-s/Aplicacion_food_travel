@@ -94,3 +94,7 @@ class ControladorDetallesDest:
         """Metodo para regresar del menu de error"""
         self.app.vista_detalles_dest.cambiar_frame(
             self.app.vista_detalles_dest.frame_menu)
+        
+    def regresar_menu(self):
+        '''Metodo para volver al menu principal'''
+        self.app.cambiar_frame(self.app.vista_inicio)

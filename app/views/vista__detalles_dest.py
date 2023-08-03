@@ -16,8 +16,9 @@ class VistaDetallesDestino(customtkinter.CTkFrame):
 
         super().__init__(master)
         # Configuracion basica
-        self.columnconfigure(0, weight=50)
-        self.columnconfigure(1, weight=100)
+        self.columnconfigure(0, weight=5)
+        self.columnconfigure(1, weight=50)
+        self.columnconfigure(2, weight=100)
         self.rowconfigure(0, weight=1)
         self.master = master
         self.controlador = controlador
@@ -25,14 +26,14 @@ class VistaDetallesDestino(customtkinter.CTkFrame):
         # Placeholder para el menu izquierdo
         self.frame_menu = customtkinter.CTkFrame(
             self, fg_color=self.c_naranja_quemado)
-        self.frame_menu.grid(column=0, row=0, sticky='nswe')
+        self.frame_menu.grid(column=1, row=0, sticky='nswe')
         self.frame_menu.columnconfigure(0, weight=1)
         self.frame_menu.rowconfigure(0, weight=75)  # Menu locales
         self.frame_menu.rowconfigure(1, weight=25)  # Boto accion
 
         # Frame para el mapa
         self.frame_mapa = customtkinter.CTkFrame(self, fg_color=self.c_verde)
-        self.frame_mapa.grid(column=1, row=0, sticky='nswe')
+        self.frame_mapa.grid(column=2, row=0, sticky='nswe')
         self.frame_mapa.columnconfigure(0, weight=0)
 
         # Placeholder para el mapa
@@ -65,7 +66,7 @@ class VistaDetallesDestino(customtkinter.CTkFrame):
         # Vista error
         self.frame_error = customtkinter.CTkFrame(
             self, fg_color=self.c_naranja_quemado)
-        self.frame_error.grid(column=0, row=0, sticky='nswe')
+        self.frame_error.grid(column=1, row=0, sticky='nswe')
         self.frame_error.columnconfigure(0, weight=1)
         self.frame_error.rowconfigure(0, weight=75)  # Mensaje error
         self.frame_error.rowconfigure(1, weight=25)  # Boton 'ok'
@@ -77,10 +78,19 @@ class VistaDetallesDestino(customtkinter.CTkFrame):
         self.mensaje_error.grid(column=0, row=0, sticky='nswe')
 
         # Boton error
-        # Crerar controlador.regresar
         self. boton_error = customtkinter.CTkButton(
             self.frame_error, text='Ok', command=controlador.regresar, height=40, fg_color=self.c_gris_azulado, hover_color=self.c_verde)
         self.boton_error.grid(column=0, row=1)
+        
+        # Frame boton regresar
+        self.grid_return = customtkinter.CTkFrame(self)
+        self.grid_return.grid(column = 0, row = 0, sticky = 'nswe')
+        self.grid_return.columnconfigure(0, weight=1)
+        self.grid_return.rowconfigure(0, weight=1)
+        
+        # Botno return
+        self.boton_return = customtkinter.CTkButton(self.grid_return, command=controlador.regresar_menu,height=40,width=10, fg_color=self.c_gris_azulado, hover_color=self.c_verde, text='<')
+        self.boton_return.grid(column = 0, row = 0, sticky = 'nswe')
         
         # Inicializar
         self.cambiar_frame(self.frame_menu)
