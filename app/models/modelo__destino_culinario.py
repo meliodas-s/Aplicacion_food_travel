@@ -87,8 +87,8 @@ class DestinoCulinario(ObjetoId):
 
 
 class ItemMenu:
-    def __init__(self, destino: DestinoCulinario, check_box: CTkCheckBox, imagen = None, ubicacion= None) -> None:
+    def __init__(self, destino: DestinoCulinario, radio_button: CTkCheckBox, imagen = None, ubicacion= None) -> None:
         self.destino = destino
-        self.check_box = check_box
+        self.radio_button = radio_button
         self.ubicacion = ubicacion
         self.imagen = imagen

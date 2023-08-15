@@ -20,7 +20,7 @@ class ObjetoId:
             como id del destino.
             """
             with open(self.ubicacion, 'r') as file:
-                # Pasamo de Json a dict
+                # Pasamos de Json a dict
                 destinos = json.load(file)
 
                 # Buscamos el ultimo id del objeto

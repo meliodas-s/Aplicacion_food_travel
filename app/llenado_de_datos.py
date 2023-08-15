@@ -113,4 +113,6 @@ print('Guardado de nuevo JSON: Ok')
 # Solucion 1: Cada vez que se cree un objetoId se debe guardar
 # solucion 2: Si se gurda una lista con objetos debe ir creandose id por id
 #     a medida que se vallan guardando los objetos. Pero siempre que se cree uno
-#     se debera verificar cual es el ultimo id y ese la desventaja de esta solucion
+#     se debera verificar cual es el ultimo id y ese la desventaja de esta solucion.
+#       No debe haber problema por ahora, ya que el programa esta hecho para crear
+#     los destinos de a uno y no introducir dos destinos a la ves
