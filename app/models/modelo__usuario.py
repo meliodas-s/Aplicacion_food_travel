@@ -8,7 +8,7 @@ class Usuario(ObjetoId):
                  contrasenna: str,
                  nombre: str,
                  apellido: str,
-                 historial_rutas: list[int],
+                 historial_rutas: list[int] = None,
                  id=None) -> None:
         super().__init__('data/usuarios.json', id)
         self.nombre_usuario = nombre_usuario
